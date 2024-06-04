@@ -20,13 +20,3 @@ autoinstall:
     - curtin in-target --target=/target -- mkdir -p /data/ipmv
   user-data:
     disable_root: false
-    chpasswd:
-      expire: false
-    users:
-      - default
-      - name: cobalt
-        passwd: "$6$FhcddHFVZ7ABA4Gi$bURr88b7Tx5pAhgXXEs.aSBM2mHq7dkA6lTrEuo5CgXHe9I0047vOydJ6byOKQn359.c.vanG2hS./qoxLUqy."
-        lock_passwd: false
-        groups: [sudo]
-        shell: /bin/bash
-        ssh_authorized_keys: []
