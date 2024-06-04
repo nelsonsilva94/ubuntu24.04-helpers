@@ -1,16 +1,15 @@
-version: 1
-identity:
-  hostname: ubuntu
-  password: "$6$FhcddHFVZ7ABA4Gi$bURr88b7Tx5pAhgXXEs.aSBM2mHq7dkA6lTrEuo5CgXHe9I0047vOydJ6byOKQn359.c.vanG2hS./qoxLUqy."
-  username: cobalt
-storage:
-  layout:
-    name: lvm
-packages:
-  - build-essential
-  - curl
-  - wget
-  - vim
-  - git
-late-commands:
-  - curtin in-target --target=/target -- mkdir -p /data/ipmv
+#cloud-config
+autoinstall:
+  # r00tme
+  user-data:
+    users:
+      - default
+      - name: cobalt
+        passwd: "$6$FhcddHFVZ7ABA4Gi$bURr88b7Tx5pAhgXXEs.aSBM2mHq7dkA6lTrEuo5CgXHe9I0047vOydJ6byOKQn359.c.vanG2hS./qoxLUqy."
+        lock_passwd: false
+        shell: /bin/bash
+        groups: [adm,sudo]
+  ssh:
+    allow-pw: true
+    authorized-keys: []
+    install-server: true
