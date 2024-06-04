@@ -5,8 +5,6 @@ autoinstall:
     hostname: ubuntu
     password: "$6$FhcddHFVZ7ABA4Gi$bURr88b7Tx5pAhgXXEs.aSBM2mHq7dkA6lTrEuo5CgXHe9I0047vOydJ6byOKQn359.c.vanG2hS./qoxLUqy."
     username: cobalt
-  ssh:
-    install-server: yes
   storage:
     layout:
       name: lvm
@@ -18,5 +16,3 @@ autoinstall:
     - git
   late-commands:
     - curtin in-target --target=/target -- mkdir -p /data/ipmv
-  user-data:
-    disable_root: false
